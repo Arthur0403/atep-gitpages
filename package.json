@@ -1,0 +1,28 @@
+{
+  "name": "atep",
+  "version": "1.0.0",
+  "description": "team project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^9.6.1",
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-imagemin": "^6.0.0",
+    "gulp-newer": "^1.4.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-responsive": "^2.14.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-strip-comments": "^2.5.2",
+    "gulp-strip-css-comments": "^2.0.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-uglifycss": "^1.1.0",
+    "gulp-webp": "^4.0.1",
+    "imagemin-jpeg-recompress": "^6.0.0"
+  }
+}
