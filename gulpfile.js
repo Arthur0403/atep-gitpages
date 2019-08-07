@@ -23,7 +23,7 @@ const path = {
 							srccss: 'src/css/',
 							js:     'dev/js/',
 							img:    'dev/img/',
-							imgx:   'dev/img/x3/'
+							imgx:   'dev/img/x3/',
 							font:   'src/font/'
 						},
 						src: {
@@ -42,7 +42,7 @@ const path = {
 							js:   'src/js/*.js',
 							img: ['src/img/**/*.jpg',
 										'src/img/**/*.svg',
-										'src/img/**/*.png']
+										'src/img/**/*.png'],
 							font: 'src/font/**/*.*'
 						},
 					};
