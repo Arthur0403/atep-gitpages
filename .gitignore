@@ -1,9 +1,0 @@
-.DS_Store
-*.ai
-*.log
-*.pdf
-*.sublime*
-node_modules/
-npm-debag.*
-Thumbs.db
-src/
