@@ -25,5 +25,13 @@
     "gulp-uglifycss": "^1.1.0",
     "gulp-webp": "^4.0.1",
     "imagemin-jpeg-recompress": "^6.0.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arthur0403/ATEP.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Arthur0403/ATEP/issues"
+  },
+  "homepage": "https://github.com/Arthur0403/ATEP#readme"
 }
