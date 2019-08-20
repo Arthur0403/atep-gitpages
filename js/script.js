@@ -1,0 +1,1 @@
+"use strict";function checkFooterForm(){var e=document.querySelector(".footer__form-input");document.querySelector(".footer__form-button").disabled=!e.value&&"disabled"}
