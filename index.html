@@ -3,8 +3,9 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
-	<meta name="viewport" content="width=device, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="css/style.css">
+	<script src="https://www.google.com/recaptcha/api.js"></script>
 </head>
 <body>
 	<header class="header">
@@ -100,22 +101,26 @@
 			</ul>
 		</nav>
 		<ul class="header__item header__item--user-menu user-menu">
-			<li class="user-menu__item user-menu__item--like"><a href="#"><span class="visually-hidden">Нравиться!</span>
+			<li class="user-menu__item user-menu__item--like"><a href="#" class="user-menu__link"><span class="visually-hidden">Нравиться!</span>
 				<svg class="user-menu__icon" width="21" height="21">
 					<use xlink:href="img/x3/sprite.svg#icon-like"></use>
-				</svg></a></li>
-			<li class="user-menu__item user-menu__item--cart"><a href="#"><span class="visually-hidden">В вашей корзине </span><span class="user-menu__number-purchases">0</span><span class="visually-hidden"> товаров</span>
+				</svg>
+			</a></li>
+			<li class="user-menu__item user-menu__item--cart"><a href="#" class="user-menu__link"><span class="visually-hidden">В вашей корзине </span><span class="user-menu__number-purchases">0</span><span class="visually-hidden"> товаров</span>
 				<svg class="user-menu__icon" width="22" height="22">
 					<use xlink:href="img/x3/sprite.svg#icon-cart"></use>
-				</svg></a></li></a></li>
-			<li class="user-menu__item user-menu__item--user"><a href="#"><span class="visually-hidden">Пользователь</span>
+				</svg>
+			</a></li>
+			<li class="user-menu__item user-menu__item--user"><a href="#" class="user-menu__link link-login"><span class="visually-hidden">Пользователь</span>
 				<svg class="user-menu__icon" width="23" height="23">
 					<use xlink:href="img/x3/sprite.svg#icon-user"></use>
-				</svg></a></li></a></li></a></li>
-			<li class="user-menu__item user-menu__item--search"><a href="#"><span class="visually-hidden">Поиск</span>
+				</svg>
+			</a></li>
+			<li class="user-menu__item user-menu__item--search"><a href="#" class="user-menu__link"><span class="visually-hidden">Поиск</span>
 				<svg class="user-menu__icon" width="20" height="20">
 					<use xlink:href="img/x3/sprite.svg#icon-search"></use>
-				</svg></a></li></a></li></a></li>
+				</svg>
+			</a></li>
 		</ul>
 	</header>
 	<section class="main-slider"></section>
@@ -136,17 +141,45 @@
 			<div class="footer__item">
 				<form class="footer__form" method="post" action="#" id="form-follow" name="form-follow">
 					<label class="footer__form-label">Follow us
-						<input class="footer__form-input" type="email" id="email" onkeyup="checkFooterForm();" name="email" maxlength="30" placeholder="Email...">
+						<input class="footer__form-input" type="email" id="form-email" onkeyup="checkFooterForm();" name="email" maxlength="30" placeholder="Email...">
 					</label>
-					<input class="footer__form-button form-button" type="submit" id="submit_form-follow" name="submit_form-follow" value="Подписаться" disabled>
+					<input class="footer__form-button form-button" type="submit" id="submit-form-follow" name="submit_form-follow" value="Подписаться" disabled>
 				</form>
 			</div>
 			<div class="footer__item">@ 2019 ATEP. ® All Right Reserved</div>
 		</div>
 	</footer>
-	<div class="modal-login">
-		<form class="modal-login__form">
-			<h3>Вход</h3>
+	<div class="modal-wrapper"></div>
+	<div class="modal modal--login">
+		<form action="" class="modal__form" method="post" name="login-form">
+			<h3 class="modal__title">Вход</h3>
+			<label class="modal__label">
+				<input class="modal__input" type="email" id="email" name="login" placeholder="Email" required>
+			</label>
+			<label class="modal__label">
+				<input class="modal__input" name="pasword" type="password" pattern=”(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}” placeholder="Password" required>
+			</label>
+			<div class="modal__input modal__input--captcha g-recaptcha" id="recaptcha" data-sitekey="6LeBMLQUAAAAAMpIkzxAeI6yHx-dgA7k6XZaSZ2U"></div>
+			<div class="modal__label modal__label--captchaError"></div>
+			<div class="modal__buttons">
+				<div class="modal__button modal__button--login-group">
+					<input class="modal__button--login form-button" type="submit" id="submit-login-login" name="submit_login-login" value="Войти">
+					<a href="#" class="modal__link link-recovery">Забыли пароль?</a>
+				</div><span>или</span>
+				<a class="modal__button form-button" href="#">Подписаться</a>
+			</div>
+		</form>
+	</div>
+	<div class="modal modal--recovery">
+		<form action="" class="modal__form" method="post" name="password-recovery-form">
+			<h1 class="modal__title modal__title--recovery">Восстановление пароля</h1>
+			<p class="modal__text">Введите ваш email адрес...</p>
+			<input type="email" class="modal__input modal__input--recovery" value="Email...">
+			<p class="modal__text">Укажите адрес эл. почты, который вы использовали при оформлении заказов в ATEP. Мы вышлем вам инструкцию по восстановлению пароля.</p>
+			<div class="modal__buttons modal__buttons--recovery">
+				<input type="submit" class="modal__button modal__button--recovery form-button" value="Восстановить пароль">
+				<a class="modal__button form-button link-login modal__button--recovery" href="#">Вспомнили пароль?</a>
+			</div>
 		</form>
 	</div>
 	<script type="text/javascript" src="js/script.js"></script>
