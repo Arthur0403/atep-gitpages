@@ -11,12 +11,12 @@
 	<header class="header">
 		<a href="#main-content" class="accessible header__accessible">Перейти к основному контенту</a>
 		<div class="header__item header__item--logo">
-			<div class="logo"><a class="logo__link">A<span>tep</span></a></div>
+			<div class="logo"><a class="logo__link" href="index.html">A<span>tep</span></a></div>
 		</div>
 		<nav class="header__item main-nav">
 			<ul>
 				<li class="main-nav__item">
-					<a class="main-nav__link">
+					<a class="main-nav__link" href="index.html">
 						<span>Г</span><span>л</span><span>а</span><span>в</span><span>н</span><span>а</span><span>я</span>
 					</a>
 				</li>
@@ -111,7 +111,7 @@
 					<use xlink:href="img/sprite.svg#icon-cart"></use>
 				</svg>
 			</a></li>
-			<li class="user-menu__item user-menu__item--user"><a href="login.html" class="user-menu__link link-login"><span class="visually-hidden">Пользователь</span>
+			<li class="user-menu__item user-menu__item--user"><a class="user-menu__link link-login"><span class="visually-hidden">Пользователь</span>
 				<svg class="user-menu__icon" width="23" height="23">
 					<use xlink:href="img/sprite.svg#icon-user"></use>
 				</svg>
@@ -123,7 +123,26 @@
 			</a></li>
 		</ul>
 	</header>
-	<section class="main-slider"></section>
+	<div class="modal modal--page" id="main-content">
+		<form action="" class="modal__form modal__form--page" method="post" name="login-form">
+			<h3 class="modal__title modal__title--page">Вход</h3>
+			<label class="modal__label">
+				<input class="modal__input modal__input--page" type="email" id="email" name="login" placeholder="Email" required>
+			</label>
+			<label class="modal__label">
+				<input class="modal__input modal__input--page" name="pasword" type="password" pattern=”(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}” placeholder="Password" required>
+			</label>
+			<div class="modal__input modal__input--page modal__input--captcha g-recaptcha" id="recaptcha" data-sitekey="6LeBMLQUAAAAAMpIkzxAeI6yHx-dgA7k6XZaSZ2U"></div>
+			<div class="modal__label modal__label--captchaError"></div>
+			<div class="modal__buttons">
+				<div class="modal__button-group">
+					<input class="modal__button modal__button--page modal__button--login form-button" type="submit" id="submit-login-login" name="submit_login-login" value="Войти">
+					<a href="#" class="modal__link link-recovery">Забыли пароль?</a>
+				</div><span>или</span>
+				<a class="modal__button modal__button--page form-button" href="#">Подписаться</a>
+			</div>
+		</form>
+	</div>
 	<footer class="footer">
 		<div class="footer__wrapper">
 			<nav class="footer__item footer__item--menu">
@@ -149,67 +168,6 @@
 			<div class="footer__item footer__item--info">@ 2019 ATEP. ® All Right Reserved</div>
 		</div>
 	</footer>
-	<div class="modal-wrapper"></div>
-	<div class="modal modal--login">
-		<form action="" class="modal__form" method="post" name="login-form">
-			<h3 class="modal__title">Вход</h3>
-			<label class="modal__label">
-				<input class="modal__input" type="email" id="email" name="login" placeholder="Email" required>
-			</label>
-			<label class="modal__label">
-				<input class="modal__input" name="pasword" type="password" pattern=”(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}” placeholder="Password" required>
-			</label>
-			<div class="modal__input modal__input--captcha g-recaptcha" id="recaptcha" data-sitekey="6LeBMLQUAAAAAMpIkzxAeI6yHx-dgA7k6XZaSZ2U"></div>
-			<div class="modal__label modal__label--captchaError"></div>
-			<div class="modal__buttons">
-				<div class="modal__button-group">
-					<input class="modal__button modal__button--login form-button" type="submit" id="submit-login-login" name="submit_login-login" value="Войти">
-					<a href="#" class="modal__link link-recovery">Забыли пароль?</a>
-				</div><span>или</span>
-				<a class="modal__button form-button" href="#">Подписаться</a>
-			</div>
-		</form>
-	</div> 
-	<div class="modal modal--like-login modal--show">
-		<picture class="modal__article-photo">
-			<source type="image/webp" media="(min-width: 1220px)" srcset="img/wx1/modal-like-img_desk.webp 1x, img/wx2/modal-like-img_desk.webp 2x, img/wx3/modal-like-img_desk.webp 3x">
-			<source type="image/webp" media="(min-width: 768px)" srcset="img/wx1/modal-like-img_tab.webp 1x, img/wx2/modal-like-img_tab.webp 2x, img/wx3/modal-like-img_tab.webp 3x">
-			<source type="image/webp" srcset="img/wx1/modal-like-img_mob.webp 1x, img/wx2/modal-like-img_mob.webp 2x, img/wx3/modal-like-img_mob.webp 3x">
-			<source media="(min-width: 1220px)" srcset="img/modal-like-img_desk.jpg">
-			<source media="(min-width: 768px)" srcset="img/modal-like-img_tab.jpg">
-			<img class="image" src="img/modal-like-img_mob.jpg">
-		</picture>
-		<form action="" class="modal__form modal__form--like-login" method="post" name="login-form">
-			<h3 class="modal__title">Вход</h3>
-			<label class="modal__label">
-				<input class="modal__input" type="email" id="email" name="login" placeholder="Email" required>
-			</label>
-			<label class="modal__label">
-				<input class="modal__input" name="pasword" type="password" pattern=”(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}” placeholder="Password" required>
-			</label>
-			<div class="modal__input modal__input--captcha g-recaptcha" id="recaptcha" data-sitekey="6LeBMLQUAAAAAMpIkzxAeI6yHx-dgA7k6XZaSZ2U"></div>
-			<div class="modal__label modal__label--captchaError"></div>
-			<div class="modal__buttons">
-				<div class="modal__button-group">
-					<input class="modal__button modal__button--login form-button" type="submit" id="submit-login-login" name="submit_login-login" value="Войти">
-					<a href="#" class="modal__link link-recovery">Забыли пароль?</a>
-				</div><span>или</span>
-				<a class="modal__button form-button" href="#">Подписаться</a>
-			</div>
-		</form>
-	</div>
-	<div class="modal modal--recovery">
-		<form action="" class="modal__form" method="post" name="password-recovery-form">
-			<h1 class="modal__title modal__title--recovery">Восстановление пароля</h1>
-			<p class="modal__text">Введите ваш email адрес...</p>
-			<input type="email" class="modal__input modal__input--recovery" value="Email...">
-			<p class="modal__text">Укажите адрес эл. почты, который вы использовали при оформлении заказов в ATEP. Мы вышлем вам инструкцию по восстановлению пароля.</p>
-			<div class="modal__buttons modal__buttons--recovery">
-				<input type="submit" class="modal__button modal__button--recovery form-button" value="Восстановить пароль">
-				<a class="modal__button form-button link-login modal__button--recovery" href="#">Вспомнили пароль?</a>
-			</div>
-		</form>
-	</div>
-	<script type="text/javascript" src="js/script.js"></script>
+	<!-- <script type="text/javascript" src="js/script.js"></script> -->
 </body>
 </html>
